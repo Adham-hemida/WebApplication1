@@ -1,0 +1,40 @@
+﻿@model Product
+<form class="border border-2" method="post" asp-action="saveNew" asp-controller="Product">
+	<div asp-validation-summary="All"></div>
+
+	<div class="form-group">
+		<label class="form-label" asp-for="Name"></label>
+		<!-- <input type="text" id="Email" name="Email" value="@Model?.Name" class="form-control" />-->
+		<input asp-for="Name" class="form-control" />
+		<span asp-validation-for="Name" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label class="form-label" asp-for="Price"></label>
+		<!--	<input type="text" id="Adress" name="Adress" value="@Model?.Price" class="form-control" /> -->
+		<input asp-for="Price" class="form-control" />
+		<span asp-validation-for="Price" class="text-danger"></span>
+	</div>
+
+	<div class="form-group">
+		<label class="form-label" asp-for="StockQuantity"></label>
+		<!--<input type="number" id="Age" name="Age" value="@Model?.StockQuantity"  class="form-control" />-->
+		<input asp-for="StockQuantity" class="form-control" />
+		<span asp-validation-for="StockQuantity" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label class="form-label" asp-for="Description"></label>
+		<!--<input type="number" id="Age" name="Age" value="@Model?.Description"  class="form-control" />-->
+		<input asp-for="Description" class="form-control" />
+		<span asp-validation-for="Description" class="text-danger"></span>
+	</div>
+	
+	<button type="submit">Save</button>
+
+</form>
+@* //عشان ال client side validation *@
+@section Scripts {
+	@* <script src="~/lib/jquery/dist/jquery.min.js"></script> *@ @* // ده موجود في layout // لو مش موجود هحطه *@
+	<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+	<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+

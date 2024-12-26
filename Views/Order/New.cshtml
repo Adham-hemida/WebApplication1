@@ -1,0 +1,46 @@
+﻿@model Order
+<form class="border border-2" method="post" asp-action="saveNew" asp-controller="Order">
+	<div asp-validation-summary="All"></div>
+	
+	<div class="form-group">
+		<label class="form-label" asp-for="OrderDate"></label>
+		<!-- <input type="text" id="Email" name="Email" value="@Model?.OrderDate" class="form-control" />-->
+		<input asp-for="OrderDate" class="form-control" />
+		<span asp-validation-for="OrderDate" class="text-danger"></span>
+	</div>
+	<div class="form-group">
+		<label class="form-label" asp-for="TotalAmount"></label>
+		<!--	<input type="text" id="Adress" name="Adress" value="@Model?.TotalAmount" class="form-control" /> -->
+		<input asp-for="TotalAmount" class="form-control" />
+		<span asp-validation-for="TotalAmount" class="text-danger"></span>
+	</div>
+
+	<div class="form-group">
+		<label class="form-label" asp-for="Status"></label>
+		<!--<input type="number" id="Age" name="Age" value="@Model?.Status"  class="form-control" />-->
+		<input asp-for="Status" class="form-control" />
+		<span asp-validation-for="Status" class="text-danger"></span>
+	</div>
+	@* <div class="form-group">
+		<label class="form-label" asp-for="OrderDetails"></label>
+		<!--<input type="number" id="Age" name="Age" value="@Model?.OrderDetails"  class="form-control" />-->
+		<input asp-for="OrderDetails" class="form-control" />
+		<span asp-validation-for="OrderDetails" class="text-danger"></span>
+	</div> *@
+	<div class="form-group">
+		<label class="form-label" asp-for="CustomerID"></label>
+		<!--<input type="number" id="Age" name="Age" value="@Model?.CustomerID"  class="form-control" />-->
+		<input asp-for="CustomerID" class="form-control" />
+		<span asp-validation-for="CustomerID" class="text-danger"></span>
+	</div> 
+
+	<button type="submit">Save</button>
+
+</form>
+@* //عشان ال client side validation
+@section Scripts {
+	@* <script src="~/lib/jquery/dist/jquery.min.js"></script> *@ @* // ده موجود في layout // لو مش موجود هحطه *@
+	<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+	<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+

@@ -1,0 +1,23 @@
+﻿@model List<Payment>
+<a asp-controller="Payment" asp-action="New" class="btn btn-primary mb-2">New</a>
+<table class="table table-bordered">
+	<tr>
+
+		<th>PaymentID</th>
+		<th>PaymentMethod</th>
+		<th>Amount</th>
+
+		<th>Deletes</th>
+
+	</tr>
+	@foreach (var employee in Model)
+	{
+		<tr>
+			<td>@employee.PaymentID</td>
+			<td>@employee.PaymentMethod</td>
+			<td>@employee.Amount</td>
+			@* class="btn btn-primary mb-2 *@
+			<td><a asp-controller="Payment" asp-action="Delete" asp-route-id="@employee.PaymentID"><button type="button" class="btn btn-danger"> Delete</button></a></td>
+		</tr>	@* class="btn btn-primary mb-2" *@
+	}
+</table>

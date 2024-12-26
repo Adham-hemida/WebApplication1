@@ -1,0 +1,27 @@
+﻿@model List<Product>
+<a asp-controller="Product" asp-action="New" class="btn btn-primary mb-2">New</a>
+<table class="table table-bordered">
+	<tr>
+
+		<th>ProductID</th>
+		<th>Name</th>
+		<th>Price</th>
+		<th>StockQuantity</th>
+		<th>Description</th>
+		
+		<th>Deletes</th>
+
+	</tr>
+	@foreach (var employee in Model)
+	{
+		<tr>
+			<td>@employee.ProductID</td>
+			<td>@employee.Name</td>
+			<td>@employee.Price</td>
+			<td>@employee.StockQuantity</td>
+			<td>@employee.Description</td>
+			@* class="btn btn-primary mb-2 *@
+			<td><a asp-controller="Product" asp-action="Delete" asp-route-id="@employee.ProductID"><button type="button" class="btn btn-danger"> Delete</button></a></td>
+		</tr>	@* class="btn btn-primary mb-2" *@
+	}
+</table>

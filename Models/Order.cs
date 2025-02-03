@@ -9,14 +9,15 @@ namespace WebApplication1.Models
     {
         [Key]
         public int OrderID { get; set; }
-
-        [Display(Name ="Date of Order")]
+		public string OrderNumber { get; set; }
+        public string OrderName { get; set; } = string.Empty;
+		[Display(Name ="Date of Order")]
         public string OrderDate { get; set; }
         public int TotalAmount { get; set; }
         public string Status { get; set; }
         [ForeignKey("Customer")]
         public int CustomerID { get; set; }
-
+        
         // Navigation properties
         public Customer Customer { get; set; }
         public  ICollection<OrderDetails> OrderDetails { get; set; }

@@ -10,7 +10,7 @@ namespace WebApplication1.Models
         [Key]
         public int OrderID { get; set; }
 		public string OrderNumber { get; set; }
-        public string OrderName { get; set; } = string.Empty;
+       
 		[Display(Name ="Date of Order")]
         public string OrderDate { get; set; }
         public int TotalAmount { get; set; }
